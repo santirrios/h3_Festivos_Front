@@ -1,0 +1,22 @@
+<br />
+<div class="d-flex">
+  <span class="spacer"></span>
+  <p-floatLabel>
+    <p-calendar #calendar [(ngModel)]="date" inputId="message" />
+
+    <label for="message">Seleccione una fecha</label>
+  </p-floatLabel>
+  <p-button
+    (onClick)="toggleDiv()"
+    (onClick)="validarFestivoPorFecha()"
+    label="Submit"
+  />
+  <span class="spacer"></span>
+</div>
+<br />
+
+<div *ngIf="mostrarDiv">
+  <p class="p-3 text-center text-xl">
+    {{ mensajeFestivo }}
+  </p>
+</div>
