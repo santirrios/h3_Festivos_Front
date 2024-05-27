@@ -26,8 +26,6 @@ export class ValidarPorFechaComponent {
   }
 
   validarFestivoPorFecha() {
-    console.log('validarFestivoPorFecha');
-
     let dateObject = new Date(this.date);
     let year = dateObject.getFullYear();
     let month = dateObject.getMonth() + 1;
@@ -45,16 +43,16 @@ export class ValidarPorFechaComponent {
       .subscribe({
         next: (resp) => {
           if (resp) {
-            this.mensajeFestivo = 'Es festivo';
+            this.mensajeFestivo = 'Es festivo!!';
           } else {
-            this.mensajeFestivo = 'No es festivo';
+            this.mensajeFestivo = 'No es festivo :(';
           }
           this.mostrarDiv = true;
         },
         error: (response) => {
           this.mensajeFestivo = response.error;
           this.mostrarDiv = true;
-          console.error('There was an error!', response);
+          console.error('Something went wrong:', response);
         }
       });
   }

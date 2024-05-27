@@ -2,15 +2,10 @@
 <div class="d-flex">
   <span class="spacer"></span>
   <p-floatLabel>
-    <p-calendar #calendar [(ngModel)]="date" inputId="message" />
-
     <label for="message">Seleccione una fecha</label>
+    <p-calendar #calendar [(ngModel)]="date" inputId="message" />
   </p-floatLabel>
-  <p-button
-    (onClick)="toggleDiv()"
-    (onClick)="validarFestivoPorFecha()"
-    label="Submit"
-  />
+  <p-button (onClick)="toggleDiv()" (onClick)="validarFestivoPorFecha()" label="Submit" />
   <span class="spacer"></span>
 </div>
 <br />
