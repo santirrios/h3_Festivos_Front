@@ -1,0 +1,22 @@
+<div class="p-3">
+  <div class="block">
+    <mat-form-field>
+      <mat-label>Año</mat-label>
+      <input matInput [(ngModel)]="year" laceholder="Fecha">
+    </mat-form-field>
+    <div>
+      <button type="button" mat-raised-button color="primary" (click)="validarFestivo()">Validar por año</button>
+    </div>
+  </div>
+
+  <div *ngIf="mensaje !== ''">
+    <p class="p-3 text-center text-xl">
+      {{ mensaje }}
+    </p>
+  </div>
+
+  <div class="t-3" *ngIf="mostrarDiv">
+    <ngx-datatable class="dark" [rows]="festivos" [columns]="columnas" [rowHeight]="'auto'" [headerHeight]="50"
+      [footerHeight]="50" [limit]="10" [columnMode]="modoColumna.force" [selectionType]="tipoSeleccion.single"></ngx-datatable>
+  </div>
+</div>
